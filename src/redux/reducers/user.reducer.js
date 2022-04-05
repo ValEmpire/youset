@@ -1,4 +1,4 @@
-import { SET_USER } from "../../const";
+import { SET_USER_DETAILS } from "../../const";
 
 /**
  * The preloaded state
@@ -15,14 +15,14 @@ const initialState = {
  */
 export const user = (state = initialState, action) => {
   switch (action.type) {
-    case SET_USER:
-      const { email, age, gender } = action.payload;
+    case SET_USER_DETAILS:
+      const user = action.payload;
+
+      const detail = Object.keys(user)[0];
 
       return {
         ...state,
-        email,
-        age,
-        gender,
+        [detail]: user[detail],
       };
 
     default:
