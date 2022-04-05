@@ -1,5 +1,5 @@
 /**
- * This will make sure that calling reducers from actions wont be reassigned
+ * This will make sure that no two reducers will be called from actions
  */
 
 export const SET_USER_DETAILS = "SET_USER_DETAILS",
