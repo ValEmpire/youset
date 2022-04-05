@@ -1,8 +1,9 @@
 import { ThemeProvider } from "@mui/material";
 import { Provider } from "react-redux";
-import "./App.css";
 import { store } from "./redux/store";
 import { theme } from "./theme";
+
+import "./App.css";
 
 function App() {
   return (
