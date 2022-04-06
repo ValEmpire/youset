@@ -14,7 +14,7 @@ const initialState = {
 export const step = (state = initialState, action) => {
   switch (action.type) {
     case SET_ACTIVE_STEP:
-      const { activeStep } = action.payload;
+      const activeStep = action.payload;
 
       return {
         ...state,
