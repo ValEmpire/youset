@@ -4,7 +4,7 @@ import { SET_ACTIVE_STEP } from "../../const";
  * The preloaded state
  */
 const initialState = {
-  activeStep: null,
+  activeStep: 0,
 };
 
 /**

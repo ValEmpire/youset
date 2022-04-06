@@ -1,14 +1,14 @@
 import React, { useCallback, useEffect } from "react";
-import { Box, Grid, Typography } from "@mui/material";
-import Pricing from "../../components/Pricing";
+import { Box } from "@mui/material";
 import Stepper from "../../components/Stepper";
 import { getInsurancePackages } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import PricingStep from "./PricingStep";
 
 const QuoteRoute = () => {
   const dispatch = useDispatch();
 
-  const { packages } = useSelector((state) => state.insurancePackage);
+  const { activeStep } = useSelector((state) => state.step);
 
   const handleInsurancePackages = useCallback(() => {
     dispatch(getInsurancePackages());
@@ -20,21 +20,9 @@ const QuoteRoute = () => {
 
   return (
     <Box mt={2} pt={3}>
-      <Stepper activeStep={0} />
+      <Stepper activeStep={activeStep} />
 
-      <Box mt={2} pt={4}>
-        <Box display={"flex"} mb={2} pb={3} justifyContent="center">
-          <Typography variant="h4">Insurance Packages</Typography>
-        </Box>
-
-        <Grid container justifyContent={"center"} spacing={3}>
-          {packages.map((insurancePackage, i) => (
-            <Grid item xs={12} sm={8} md={4} key={insurancePackage.id + i}>
-              <Pricing {...insurancePackage} />
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+      {activeStep === 0 && <PricingStep />}
     </Box>
   );
 };
