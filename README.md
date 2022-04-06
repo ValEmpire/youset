@@ -4,7 +4,7 @@ This is a web application for individual who is looking for tenant insurance. Th
 
 ## Demo
 
-[DEMO](https://youset-exam.web.app)
+### [LIVE](https://youset-exam.web.app)
 
 ## Screenshots
 
