@@ -32,7 +32,7 @@ const HomeRoute = () => {
             </Button>
           </Box>
         </Grid>
-        <Grid item md={6} sm={10} xs={12}>
+        <Grid item md={6} sm={7} xs={12}>
           <Box mt={3}>
             <img src="/images/jumbotron.jpg" width={"100%"} alt="jumbotron" />
           </Box>
