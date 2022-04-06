@@ -6,8 +6,6 @@ import { store } from "./redux/store";
 import HomePage from "./pages/HomePage";
 import QuotePage from "./pages/QuotePage";
 
-import "./App.css";
-
 function App() {
   return (
     <Provider store={store()}>

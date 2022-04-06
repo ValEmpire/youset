@@ -1,12 +1,6 @@
 import React from "react";
-import {
-  AppBar,
-  Box,
-  Container,
-  Toolbar,
-  Typography,
-  Button,
-} from "@mui/material";
+import { AppBar, Box, Container, Toolbar, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Appbar = () => {
   return (
@@ -16,12 +10,17 @@ const Appbar = () => {
           <Container maxWidth="lg">
             <Toolbar disableGutters>
               <Box sx={{ flexGrow: 1 }}>
-                <Typography color="primary.main" variant="h4">
-                  Test
-                </Typography>
+                <Button size="large" LinkComponent={Link} to="/">
+                  {"</CodingTest>"}
+                </Button>
               </Box>
               <Box>
-                <Button variant="contained" size="large">
+                <Button
+                  LinkComponent={Link}
+                  to="/getquote"
+                  variant="contained"
+                  size="large"
+                >
                   Get your free quote
                 </Button>
               </Box>
