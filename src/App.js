@@ -1,16 +1,17 @@
-import { ThemeProvider, Typography } from "@mui/material";
+import React from "react";
 import { Provider } from "react-redux";
+import Layout from "./layout";
 import { store } from "./redux/store";
-import { theme } from "./theme";
 
 import "./App.css";
+import { Typography } from "@mui/material";
 
 function App() {
   return (
     <Provider store={store()}>
-      <ThemeProvider theme={theme}>
-        <Typography variant="h1">Welcome to Youset</Typography>
-      </ThemeProvider>
+      <Layout>
+        <Typography variant="h4">HELLO</Typography>
+      </Layout>
     </Provider>
   );
 }

@@ -8,9 +8,24 @@ const customTheme = createTheme({
     },
   },
 
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: "95px",
+        },
+      },
+    },
+  },
+
   typography: {
     allVariants: {
       opacity: 1,
+    },
+
+    button: {
+      textTransform: "none",
+      fontFamily: "'Poppins', sans-serif",
     },
 
     h1: {
