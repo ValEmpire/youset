@@ -15,7 +15,7 @@ import Line from "./Line";
 import { selectInsurancePackage } from "../redux/actions";
 
 const Pricing = (props) => {
-  const { title, name, price, includes, id } = props;
+  const { title, name, price, includes, id, hideSelect } = props;
 
   const dispatch = useDispatch();
 
@@ -63,7 +63,7 @@ const Pricing = (props) => {
         </List>
       </Box>
 
-      <Box pb={2}>
+      <Box pb={2} display={hideSelect ? "none" : true}>
         <Button
           variant={selected === id ? "contained" : "outlined"}
           size="large"

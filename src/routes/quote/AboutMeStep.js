@@ -40,6 +40,7 @@ const AboutMeStep = () => {
               placeholder="name@awesome.com"
               name="email"
               fullWidth
+              value={email}
               error={!!emailErr}
               helperText={emailErr ?? null}
               onChange={handleUserDetails}
@@ -51,6 +52,7 @@ const AboutMeStep = () => {
             <TextField
               type={"number"}
               placeholder="years"
+              value={age}
               name="age"
               fullWidth
               onChange={handleUserDetails}
@@ -65,9 +67,9 @@ const AboutMeStep = () => {
               name="gender"
               onChange={handleUserDetails}
             >
-              <MenuItem value="male">Male</MenuItem>
-              <MenuItem value="female">Female</MenuItem>
-              <MenuItem value="prefer not to say">Prefer not to say</MenuItem>
+              <MenuItem value="Male">Male</MenuItem>
+              <MenuItem value="Female">Female</MenuItem>
+              <MenuItem value="Prefer not to say">Prefer not to say</MenuItem>
             </Select>
           </Box>
         </Grid>

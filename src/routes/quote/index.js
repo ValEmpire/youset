@@ -5,6 +5,7 @@ import { getInsurancePackages } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import PricingStep from "./PricingStep";
 import AboutMeStep from "./AboutMeStep";
+import ReviewStep from "./ReviewStep";
 
 const QuoteRoute = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,8 @@ const QuoteRoute = () => {
       {activeStep === 0 && <PricingStep />}
 
       {activeStep === 1 && <AboutMeStep />}
+
+      {activeStep === 2 && <ReviewStep />}
     </Box>
   );
 };

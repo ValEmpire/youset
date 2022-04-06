@@ -19,10 +19,6 @@ const customTheme = createTheme({
   },
 
   typography: {
-    allVariants: {
-      opacity: 1,
-    },
-
     button: {
       textTransform: "none",
       fontFamily: "'Poppins', sans-serif",
@@ -75,6 +71,14 @@ const customTheme = createTheme({
       fontSize: "15px",
       lineHeight: "1.5",
       color: "#757575",
+    },
+
+    body2: {
+      fontFamily: "'Poppins', sans-serif",
+      fontSize: "15px",
+      lineHeight: "1.5",
+      color: "#757575",
+      fontWeight: "600",
     },
   },
 });

@@ -1,17 +1,28 @@
 import { Box, Button } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveStep } from "../../redux/actions";
+import { setActiveStep, submitInsurance } from "../../redux/actions";
 
 const Actions = (props) => {
-  const { disabled } = props;
+  const { disabled, age, email, gender, selectedPackage } = props;
 
   const dispatch = useDispatch();
 
   const { activeStep } = useSelector((state) => state.step);
 
   const handleNextStep = () => {
-    dispatch(setActiveStep(activeStep + 1));
+    if (activeStep === 2) {
+      return dispatch(
+        submitInsurance({
+          age,
+          email,
+          gender,
+          selectedPackage,
+        })
+      );
+    }
+
+    return dispatch(setActiveStep(activeStep + 1));
   };
 
   const handleBackStep = () => {
@@ -19,7 +30,7 @@ const Actions = (props) => {
   };
 
   return (
-    <Box display={"flex"} justifyContent="flex-end" mt={1} pt={4}>
+    <Box display={"flex"} justifyContent="center" p={7}>
       <Button
         size="large"
         disabled={activeStep === 0}
