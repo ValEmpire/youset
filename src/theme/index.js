@@ -63,6 +63,19 @@ const customTheme = createTheme({
       fontSize: "16px",
       color: "#686868",
     },
+
+    subtitle1: {
+      fontFamily: "'Poppins', sans-serif",
+      fontSize: "22px",
+      lineHeight: "1.5",
+    },
+
+    body1: {
+      fontFamily: "'Poppins', sans-serif",
+      fontSize: "15px",
+      lineHeight: "1.5",
+      color: "#757575",
+    },
   },
 });
 
