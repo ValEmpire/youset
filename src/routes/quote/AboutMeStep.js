@@ -6,9 +6,33 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserDetails } from "../../redux/actions/user.action";
 
 const AboutMeStep = () => {
+  const dispatch = useDispatch();
+
+  const [emailErr, setEmailErr] = useState(false);
+
+  const handleUserDetails = (e) => {
+    const detail = {
+      [e.target.name]: e.target.value,
+    };
+
+    dispatch(
+      setUserDetails(detail, (err) => {
+        if (err) {
+          setEmailErr(true);
+        } else {
+          setEmailErr(false);
+        }
+      })
+    );
+  };
+
+  const { email, age, gender } = useSelector((state) => state.user);
+
   return (
     <Box mt={2} pt={4}>
       <Box display={"flex"} mb={2} pb={3} justifyContent="center">
@@ -23,19 +47,30 @@ const AboutMeStep = () => {
               placeholder="name@awesome.com"
               name="email"
               fullWidth
-              error={false}
-              helperText={null}
+              error={emailErr}
+              helperText={emailErr ? "Please check your email address" : null}
+              onChange={handleUserDetails}
             />
           </Box>
 
           <Box mt={1} pt={2}>
             <Typography variant="h6"> How old are you?</Typography>
-            <TextField placeholder="years" name="age" fullWidth />
+            <TextField
+              placeholder="years"
+              name="age"
+              fullWidth
+              onChange={handleUserDetails}
+            />
           </Box>
 
           <Box mt={1} pt={2}>
             <Typography variant="h6"> What is your gender?</Typography>
-            <Select fullWidth>
+            <Select
+              fullWidth
+              value={gender}
+              name="gender"
+              onChange={handleUserDetails}
+            >
               <MenuItem value="male">Male</MenuItem>
               <MenuItem value="female">Female</MenuItem>
               <MenuItem value="prefer not to say">Prefer not to say</MenuItem>
