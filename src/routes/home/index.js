@@ -6,7 +6,7 @@ const HomeRoute = () => {
   return (
     <Box>
       <Grid container alignItems={"center"} justifyContent="center">
-        <Grid item sm={6} xs={12}>
+        <Grid item md={6} sm={10} xs={12}>
           <Box mt={3}>
             <Box pb={2} mb={1}>
               <Typography variant="h1">Need Insurance?</Typography>
@@ -17,6 +17,12 @@ const HomeRoute = () => {
                 labore vel asperiores suscipit qui eligendi eligendi a
                 voluptatibus voluptatum.
               </Typography>
+              <Box pt={2} pb={3}>
+                <img
+                  src="https://yousetprod.wpengine.com/wp-content/uploads/2018/07/Rectangle-2.png"
+                  alt="line"
+                />
+              </Box>
             </Box>
             <Button
               variant="contained"
@@ -28,12 +34,19 @@ const HomeRoute = () => {
             </Button>
           </Box>
         </Grid>
-        <Grid item sm={6} xs={12}>
+        <Grid item md={6} sm={10} xs={12}>
           <Box mt={3}>
             <img src="/images/jumbotron.jpg" width={"100%"} alt="jumbotron" />
           </Box>
         </Grid>
       </Grid>
+
+      <Box mt={2} pt={5} textAlign="center">
+        <Typography variant="h3">
+          "Lorem ut perspiciatis unde omnis iste natus voluptatem accusantium
+          inventore veritatis et."
+        </Typography>
+      </Box>
     </Box>
   );
 };

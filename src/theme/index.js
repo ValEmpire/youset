@@ -44,6 +44,7 @@ const customTheme = createTheme({
     h3: {
       fontFamily: "'Montserrat', sans-serif",
       fontSize: "36px",
+      lineHeight: "1.3",
     },
 
     h4: {
