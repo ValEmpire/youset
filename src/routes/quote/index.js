@@ -29,7 +29,7 @@ const QuoteRoute = () => {
 
         <Grid container justifyContent={"center"} spacing={3}>
           {packages.map((insurancePackage, i) => (
-            <Grid item xs={12} sm={6} md={4} key={insurancePackage.id + i}>
+            <Grid item xs={12} sm={8} md={4} key={insurancePackage.id + i}>
               <Pricing {...insurancePackage} />
             </Grid>
           ))}
