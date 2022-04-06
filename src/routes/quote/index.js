@@ -4,6 +4,7 @@ import Stepper from "../../components/Stepper";
 import { getInsurancePackages, setActiveStep } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import PricingStep from "./PricingStep";
+import AboutMeStep from "./AboutMeStep";
 
 const QuoteRoute = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,8 @@ const QuoteRoute = () => {
       <Stepper activeStep={activeStep} />
 
       {activeStep === 0 && <PricingStep />}
+
+      {activeStep === 1 && <AboutMeStep />}
 
       <Box display={"flex"} justifyContent="flex-end" mt={1} pt={4}>
         <Button
