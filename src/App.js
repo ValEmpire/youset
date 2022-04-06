@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages";
 import QuotePage from "./pages/QuotePage";
 
 // Redux
