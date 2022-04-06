@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Line from "../../components/Line";
 
 const HomeRoute = () => {
   return (
@@ -18,10 +19,7 @@ const HomeRoute = () => {
                 voluptatibus voluptatum.
               </Typography>
               <Box pt={2} pb={3}>
-                <img
-                  src="https://yousetprod.wpengine.com/wp-content/uploads/2018/07/Rectangle-2.png"
-                  alt="line"
-                />
+                <Line />
               </Box>
             </Box>
             <Button
