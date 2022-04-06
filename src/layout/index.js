@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, ThemeProvider } from "@mui/material";
+import { Box, Container, ThemeProvider } from "@mui/material";
 import { theme } from "../theme";
 import Appbar from "./Appbar";
 
@@ -8,7 +8,10 @@ const Layout = (props) => {
     <ThemeProvider theme={theme}>
       <Box minHeight={"100vh"}>
         <Appbar />
-        {props.children}
+
+        <Container maxWidth="lg">
+          <Box>{props.children}</Box>
+        </Container>
       </Box>
     </ThemeProvider>
   );

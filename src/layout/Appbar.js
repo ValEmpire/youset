@@ -21,7 +21,9 @@ const Appbar = () => {
                 </Typography>
               </Box>
               <Box>
-                <Button variant="contained">Get your free quote</Button>
+                <Button variant="contained" size="large">
+                  Get your free quote
+                </Button>
               </Box>
             </Toolbar>
           </Container>

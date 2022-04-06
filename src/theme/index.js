@@ -41,6 +41,11 @@ const customTheme = createTheme({
       fontWeight: 600,
     },
 
+    h3: {
+      fontFamily: "'Montserrat', sans-serif",
+      fontSize: "36px",
+    },
+
     h4: {
       fontFamily: "'Poppins', sans-serif",
       fontWeight: 500,
@@ -49,6 +54,7 @@ const customTheme = createTheme({
     h5: {
       fontFamily: "'Poppins', sans-serif",
       fontSize: "18px",
+      lineHeight: "1.5",
     },
 
     h6: {
