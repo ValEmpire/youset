@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 
 import { insurancePackage } from "./insurancePackage.reducer";
 import { user } from "./user.reducer";
+import { step } from "./step.reducer";
 
 /**
  * This will combine all reducers that will be exported for redux store
@@ -9,4 +10,5 @@ import { user } from "./user.reducer";
 export default combineReducers({
   insurancePackage,
   user,
+  step,
 });
