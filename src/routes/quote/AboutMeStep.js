@@ -6,32 +6,25 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserDetails } from "../../redux/actions/user.action";
+import Actions from "./Actions";
 
 const AboutMeStep = () => {
   const dispatch = useDispatch();
 
-  const [emailErr, setEmailErr] = useState(false);
+  const { emailErr } = useSelector((state) => state.error);
+
+  const { email, age, gender } = useSelector((state) => state.user);
 
   const handleUserDetails = (e) => {
     const detail = {
       [e.target.name]: e.target.value,
     };
 
-    dispatch(
-      setUserDetails(detail, (err) => {
-        if (err) {
-          setEmailErr(true);
-        } else {
-          setEmailErr(false);
-        }
-      })
-    );
+    dispatch(setUserDetails(detail));
   };
-
-  const { email, age, gender } = useSelector((state) => state.user);
 
   return (
     <Box mt={2} pt={4}>
@@ -47,8 +40,8 @@ const AboutMeStep = () => {
               placeholder="name@awesome.com"
               name="email"
               fullWidth
-              error={emailErr}
-              helperText={emailErr ? "Please check your email address" : null}
+              error={!!emailErr}
+              helperText={emailErr ?? null}
               onChange={handleUserDetails}
             />
           </Box>
@@ -56,6 +49,7 @@ const AboutMeStep = () => {
           <Box mt={1} pt={2}>
             <Typography variant="h6"> How old are you?</Typography>
             <TextField
+              type={"number"}
               placeholder="years"
               name="age"
               fullWidth
@@ -78,6 +72,8 @@ const AboutMeStep = () => {
           </Box>
         </Grid>
       </Grid>
+
+      <Actions disabled={!email || !age || !gender || !!emailErr} />
     </Box>
   );
 };

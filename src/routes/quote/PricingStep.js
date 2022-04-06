@@ -2,9 +2,12 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 import Pricing from "../../components/Pricing";
+import Actions from "./Actions";
 
 const PricingStep = () => {
   const { packages } = useSelector((state) => state.insurancePackage);
+
+  const { selected } = useSelector((state) => state.insurancePackage);
 
   return (
     <Box mt={2} pt={4}>
@@ -19,6 +22,8 @@ const PricingStep = () => {
           </Grid>
         ))}
       </Grid>
+
+      <Actions disabled={!selected} />
     </Box>
   );
 };
