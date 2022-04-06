@@ -1,4 +1,4 @@
-import { SET_INSURANCE_PACKAGES } from "../../const";
+import { SELECT_INSURANCE_PACKAGE, SET_INSURANCE_PACKAGES } from "../../const";
 
 import data from "../../api/data.json";
 
@@ -20,4 +20,11 @@ export const getInsurancePackages = () => async (dispatch) => {
   } catch (err) {
     console.log(err);
   }
+};
+
+export const selectInsurancePackage = (id) => (dispatch) => {
+  dispatch({
+    type: SELECT_INSURANCE_PACKAGE,
+    payload: id,
+  });
 };

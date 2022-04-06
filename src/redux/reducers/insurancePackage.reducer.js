@@ -1,10 +1,12 @@
-import { SET_INSURANCE_PACKAGES } from "../../const";
+import { SELECT_INSURANCE_PACKAGE, SET_INSURANCE_PACKAGES } from "../../const";
 
 /**
  * The preloaded state
  */
 const initialState = {
   packages: [],
+
+  selected: null,
 };
 
 /**
@@ -14,9 +16,19 @@ const initialState = {
 export const insurancePackage = (state = initialState, action) => {
   switch (action.type) {
     case SET_INSURANCE_PACKAGES:
+      const packages = action.payload;
+
       return {
         ...state,
-        packages: action.payload,
+        packages,
+      };
+
+    case SELECT_INSURANCE_PACKAGE:
+      const selected = action.payload;
+
+      return {
+        ...state,
+        selected,
       };
 
     default:

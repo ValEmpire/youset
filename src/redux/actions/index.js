@@ -1,4 +1,7 @@
-import { getInsurancePackages } from "./insurancePackage.action";
+import {
+  getInsurancePackages,
+  selectInsurancePackage,
+} from "./insurancePackage.action";
 import { setActiveStep } from "./step.action";
 
-export { getInsurancePackages, setActiveStep };
+export { getInsurancePackages, setActiveStep, selectInsurancePackage };

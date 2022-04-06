@@ -10,6 +10,8 @@ const QuoteRoute = () => {
 
   const { activeStep } = useSelector((state) => state.step);
 
+  const { selected } = useSelector((state) => state.insurancePackage);
+
   const handleInsurancePackages = useCallback(() => {
     dispatch(getInsurancePackages());
   }, [dispatch]);
@@ -46,6 +48,7 @@ const QuoteRoute = () => {
           variant="contained"
           sx={{ marginLeft: "10px" }}
           onClick={handleNextStep}
+          disabled={!selected}
         >
           {activeStep === 2 ? "Submit" : "Next"}
         </Button>

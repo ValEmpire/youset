@@ -10,10 +10,20 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Line from "./Line";
+import { selectInsurancePackage } from "../redux/actions";
 
 const Pricing = (props) => {
-  const { title, name, price, includes } = props;
+  const { title, name, price, includes, id } = props;
+
+  const dispatch = useDispatch();
+
+  const { selected } = useSelector((state) => state.insurancePackage);
+
+  const handleSelectedInsurancePackage = (id) => {
+    dispatch(selectInsurancePackage(id));
+  };
 
   return (
     <Card component={Box} textAlign="center">
@@ -54,7 +64,11 @@ const Pricing = (props) => {
       </Box>
 
       <Box pb={2}>
-        <Button variant="outlined" size="large">
+        <Button
+          variant={selected === id ? "contained" : "outlined"}
+          size="large"
+          onClick={() => handleSelectedInsurancePackage(id)}
+        >
           Select
         </Button>
       </Box>
