@@ -4,7 +4,7 @@ This is a web application for individual who is looking for tenant insurance. Th
 
 ## Demo
 
-Insert gif or link to demo
+[DEMO](https://youset-exam.web.app)
 
 ## Screenshots
 
@@ -17,6 +17,8 @@ Insert gif or link to demo
 ![App Screenshot](https://raw.githubusercontent.com/ValEmpire/files/main/youset4.PNG)
 
 ## Run Locally
+
+### This app runs in node v16.13.2
 
 Clone the project
 
