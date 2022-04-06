@@ -1,32 +1,20 @@
 import React from "react";
 import { Provider } from "react-redux";
-import Layout from "./layout";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { store } from "./redux/store";
+
 import HomePage from "./pages/HomePage";
 import QuotePage from "./pages/QuotePage";
+
+// Redux
+import { store } from "./redux/store";
 
 function App() {
   return (
     <Provider store={store()}>
       <Router>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Layout>
-                <HomePage />
-              </Layout>
-            }
-          />
-          <Route
-            path="/getquote"
-            element={
-              <Layout>
-                <QuotePage />
-              </Layout>
-            }
-          />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/getquote" element={<QuotePage />} />
         </Routes>
       </Router>
     </Provider>

@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Grid,
@@ -6,10 +7,11 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
+import Actions from "./Actions";
+
+// Redux
 import { useDispatch, useSelector } from "react-redux";
 import { setUserDetails } from "../../redux/actions/user.action";
-import Actions from "./Actions";
 
 const AboutMeStep = () => {
   const dispatch = useDispatch();
@@ -18,6 +20,10 @@ const AboutMeStep = () => {
 
   const { email, age, gender } = useSelector((state) => state.user);
 
+  /**
+   * this will handle all the textfields
+   * @param {events} e
+   */
   const handleUserDetails = (e) => {
     const detail = {
       [e.target.name]: e.target.value,

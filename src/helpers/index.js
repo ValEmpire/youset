@@ -1,3 +1,8 @@
+/**
+ *
+ * @param {email to be validated} email
+ * @returns Boolean if email is valid or not
+ */
 export const validateEmail = (email) => {
   return String(email)
     .toLowerCase()

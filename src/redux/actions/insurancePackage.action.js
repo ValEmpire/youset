@@ -4,8 +4,8 @@ import data from "../../api/data.json";
 import axios from "axios";
 
 /**
- * * This action will get all the insurance packages and dispatch to reducers with type SET_INSURANCE_PACKAGES
- * Todo: use axios when getting data from backend
+ * This action will get all the insurance packages and dispatch to reducers with type SET_INSURANCE_PACKAGES
+ * Todo: use axios when getting data from backend in realtime
  */
 export const getInsurancePackages = () => async (dispatch) => {
   try {
@@ -19,17 +19,29 @@ export const getInsurancePackages = () => async (dispatch) => {
 
     return;
   } catch (err) {
-    console.log(err);
+    //handle Error
+    return;
   }
 };
 
+/**
+ * This action will recieve id and dispatch to reducers with type of SELECT_INSURANCE_PACKAGE
+ * @param {id of insurancePackage} id
+ */
 export const selectInsurancePackage = (id) => (dispatch) => {
   dispatch({
     type: SELECT_INSURANCE_PACKAGE,
     payload: id,
   });
+
+  return;
 };
 
+/**
+ * This will post request to api endpoint
+ * @param {all the data from forms} data
+ * Todo: change the api endpoint
+ */
 export const submitInsurance = (data) => async (dispatch) => {
   try {
     console.log(`Submitting data:`, data);
@@ -37,7 +49,11 @@ export const submitInsurance = (data) => async (dispatch) => {
     axios.post("https://www.example.com", {
       data,
     });
+
+    return;
   } catch (err) {
-    console.log(err);
+    // handle error
+
+    return;
   }
 };

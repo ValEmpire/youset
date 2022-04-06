@@ -1,4 +1,4 @@
-import { CheckCircle } from "@mui/icons-material";
+import React from "react";
 import {
   Box,
   Button,
@@ -9,18 +9,25 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { CheckCircle } from "@mui/icons-material";
 import Line from "./Line";
+import PropTypes from "prop-types";
+
+// redux
+import { useDispatch, useSelector } from "react-redux";
 import { selectInsurancePackage } from "../redux/actions";
 
 const Pricing = (props) => {
-  const { title, name, price, includes, id, hideSelect } = props;
-
   const dispatch = useDispatch();
+
+  const { title, name, price, includes, id, hideSelect } = props;
 
   const { selected } = useSelector((state) => state.insurancePackage);
 
+  /**
+   *
+   * @param {set the id of insurancePackage as selected} id
+   */
   const handleSelectedInsurancePackage = (id) => {
     dispatch(selectInsurancePackage(id));
   };
@@ -50,6 +57,7 @@ const Pricing = (props) => {
 
       <Box textAlign={"left"}>
         <List>
+          {/* Map the includes array */}
           {includes.map((inc, i) => (
             <ListItem key={inc + i}>
               <ListItemIcon>
@@ -74,6 +82,15 @@ const Pricing = (props) => {
       </Box>
     </Card>
   );
+};
+
+Pricing.propTypes = {
+  title: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.string,
+  includes: PropTypes.array,
+  id: PropTypes.string,
+  hideSelect: PropTypes.string,
 };
 
 export default Pricing;

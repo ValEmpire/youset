@@ -1,10 +1,11 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import Pricing from "../../components/Pricing";
-
 import Actions from "./Actions";
-import { useSelector } from "react-redux";
 import UserInfo from "../../components/UserInfo";
+
+// redux
+import { useSelector } from "react-redux";
 
 const ReviewStep = () => {
   const { age, gender, email } = useSelector((state) => state.user);

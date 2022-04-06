@@ -1,5 +1,8 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
+/**
+ * This will modify and create custom theme
+ */
 const customTheme = createTheme({
   palette: {
     primary: {
@@ -83,4 +86,7 @@ const customTheme = createTheme({
   },
 });
 
+/**
+ * This will make sure that typography fonts will be responsive in all screen sizes
+ */
 export const theme = responsiveFontSizes(customTheme);

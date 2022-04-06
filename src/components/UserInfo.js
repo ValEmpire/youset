@@ -1,5 +1,6 @@
-import { Box, Typography } from "@mui/material";
 import React from "react";
+import { Box, Typography } from "@mui/material";
+import PropTypes from "prop-types";
 
 const UserInfo = (props) => {
   const { name, value } = props;
@@ -13,6 +14,11 @@ const UserInfo = (props) => {
       >{`${value}`}</Typography>
     </Box>
   );
+};
+
+UserInfo.propTypes = {
+  name: PropTypes.string,
+  value: PropTypes.string,
 };
 
 export default UserInfo;

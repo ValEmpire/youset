@@ -7,6 +7,7 @@ import { Stepper, Step, StepLabel } from "@mui/material";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import FactCheckIcon from "@mui/icons-material/FactCheck";
+import PropTypes from "prop-types";
 
 const ColorlibConnector = styled(StepConnector)({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -74,6 +75,10 @@ const CustomizedSteppers = (props) => {
       ))}
     </Stepper>
   );
+};
+
+CustomizedSteppers.propTypes = {
+  activeStep: PropTypes.number,
 };
 
 export default CustomizedSteppers;

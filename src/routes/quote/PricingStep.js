@@ -1,8 +1,10 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
-import { useSelector } from "react-redux";
 import Pricing from "../../components/Pricing";
 import Actions from "./Actions";
+
+// redux
+import { useSelector } from "react-redux";
 
 const PricingStep = () => {
   const { packages } = useSelector((state) => state.insurancePackage);

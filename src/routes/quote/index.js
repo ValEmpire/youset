@@ -13,10 +13,16 @@ const QuoteRoute = () => {
 
   const { activeStep } = useSelector((state) => state.step);
 
+  /**
+   * Wrap dispatch inside useCallback to prevent useless re-rendering of child
+   */
   const handleInsurancePackages = useCallback(() => {
     dispatch(getInsurancePackages());
   }, [dispatch]);
 
+  /**
+   * This will get all the insurancePackages when componentDidMount
+   */
   useEffect(() => {
     handleInsurancePackages();
   }, [handleInsurancePackages]);

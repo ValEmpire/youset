@@ -1,5 +1,8 @@
-import { Box, Button } from "@mui/material";
 import React from "react";
+import { Box, Button } from "@mui/material";
+import PropTypes from "prop-types";
+
+// Redux
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveStep, submitInsurance } from "../../redux/actions";
 
@@ -50,6 +53,14 @@ const Actions = (props) => {
       </Button>
     </Box>
   );
+};
+
+Actions.propTypes = {
+  disabled: PropTypes.bool,
+  age: PropTypes.string,
+  email: PropTypes.string,
+  gender: PropTypes.string,
+  selectedPackage: PropTypes.string,
 };
 
 export default Actions;
