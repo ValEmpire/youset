@@ -11,7 +11,7 @@ const initialState = {
  * * the action will be triggered by action type cases
  * @returns the modified state
  */
-export const user = (state = initialState, action) => {
+export const step = (state = initialState, action) => {
   switch (action.type) {
     case SET_ACTIVE_STEP:
       const { activeStep } = action.payload;
