@@ -12,7 +12,7 @@ const Actions = (props) => {
 
   const handleNextStep = () => {
     if (activeStep === 2) {
-      return dispatch(
+      dispatch(
         submitInsurance({
           age,
           email,
@@ -22,7 +22,7 @@ const Actions = (props) => {
       );
     }
 
-    return dispatch(setActiveStep(activeStep + 1));
+    dispatch(setActiveStep(activeStep + 1));
   };
 
   const handleBackStep = () => {

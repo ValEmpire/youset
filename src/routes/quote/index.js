@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import PricingStep from "./PricingStep";
 import AboutMeStep from "./AboutMeStep";
 import ReviewStep from "./ReviewStep";
+import ThankStep from "./ThankStep";
 
 const QuoteRoute = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,8 @@ const QuoteRoute = () => {
       {activeStep === 1 && <AboutMeStep />}
 
       {activeStep === 2 && <ReviewStep />}
+
+      {activeStep === 3 && <ThankStep />}
     </Box>
   );
 };
