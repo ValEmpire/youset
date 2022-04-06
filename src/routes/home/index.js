@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Line from "../../components/Line";
+import { Link } from "react-router-dom";
 
 const HomeRoute = () => {
   return (
@@ -26,6 +27,8 @@ const HomeRoute = () => {
               variant="contained"
               size="large"
               sx={{ padding: "15px", fontSize: "18px" }}
+              LinkComponent={Link}
+              to="/getquote"
             >
               Get your free quote{" "}
               <ArrowForwardIcon sx={{ marginLeft: "10px" }} />
