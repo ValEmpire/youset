@@ -20,6 +20,7 @@ const ThankStep = () => {
             <Box>
               <Typography>Regards,</Typography>
               <Typography>Arcival Palma</Typography>
+              <Typography>FullStack Developer</Typography>
             </Box>
           </Box>
         </Grid>

@@ -60,7 +60,7 @@ Actions.propTypes = {
   age: PropTypes.string,
   email: PropTypes.string,
   gender: PropTypes.string,
-  selectedPackage: PropTypes.string,
+  selectedPackage: PropTypes.object,
 };
 
 export default Actions;

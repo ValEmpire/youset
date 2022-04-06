@@ -90,7 +90,7 @@ Pricing.propTypes = {
   price: PropTypes.string,
   includes: PropTypes.array,
   id: PropTypes.string,
-  hideSelect: PropTypes.string,
+  hideSelect: PropTypes.bool,
 };
 
 export default Pricing;
