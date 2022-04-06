@@ -9,7 +9,7 @@ import data from "../../api/data.json";
 export const getInsurancePackages = () => async (dispatch) => {
   try {
     // fake data
-    const res = data;
+    const res = data.insurancePackages;
 
     dispatch({
       type: SET_INSURANCE_PACKAGES,
